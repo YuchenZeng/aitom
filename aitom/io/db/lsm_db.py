@@ -1,15 +1,16 @@
-'''
+"""
 wrapper for LSM / SQLite4
 with pickle for storing values of arbitrary value types
 
 pip install lsm-db
-
-'''
+"""
 
 import pickle as pickle
 
+
 class LSM:
     def __init__(self, filename, readonly=False):
+        # from the lsm-db package
         import lsm
         self.db = lsm.LSM(filename=filename, readonly=readonly)
 
@@ -40,4 +41,3 @@ class LSM:
 
     def keys(self):
         return iter(list(self.db.keys()))
-
